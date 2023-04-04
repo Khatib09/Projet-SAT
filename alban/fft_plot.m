@@ -3,7 +3,7 @@
 nexttile;
 [frequencies, values] = fft_function(MAG,'utcTimeMillis', 'MeasurementX');
 plot(frequencies, values);
-title('MAG Measurement X');
+title('MAG Measurements X');
 
 nexttile;
 [frequencies, values] = fft_function(MAG,'utcTimeMillis', 'MeasurementY');
