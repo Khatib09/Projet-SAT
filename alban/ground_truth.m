@@ -61,4 +61,20 @@ title('Interpolation Heading')
 SpeedMin = 1;
 TimeMin = 60;
 
-indices = 0 ;
+indices_speed = find(speed_interp < SpeedMin); 
+
+indices_time = false(1, length(speed_interp)); 
+for i = 1:length(indices_speed)
+    if length(speed_interp) - indices_speed(i) >= TimeMin
+        indices_time(indices_speed(i) : indices_speed(i) + TimeMin - 1) = true;
+    end
+end
+
+
+plot(t, speed_interp);
+hold on; 
+area(t, indices_time*40, 'FaceColor', 'red', 'EdgeColor', 'none', 'FaceAlpha', 0.2); 
+xlabel('Temps (s)');
+ylabel('Speed (m/s)');
+title('Interpolation Speed')
+
