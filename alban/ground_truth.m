@@ -55,3 +55,10 @@ plot(t, heading_interp);
 xlabel('Temps (s)');
 ylabel('Heading (°)');
 title('Interpolation Heading')
+
+%% STATIC PLOT
+
+SpeedMin = 1;
+TimeMin = 60;
+
+indices = 0 ;
